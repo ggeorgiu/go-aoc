@@ -1,1 +1,1 @@
-**/*.input  filter=strongbox  diff=strongbox
+*.input  filter=strongbox  diff=strongbox
