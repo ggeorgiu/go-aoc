@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"os"
+
+	"go-aoc/pkg/in"
 )
 
 func main() {
-	input := ReadFileAsString("/day1/part1.input")
+	input := in.ReadFileAsString("/2015/day1/part1.input")
 	fmt.Println(part1(input))
 	fmt.Println(part2(input))
 }
@@ -43,18 +44,4 @@ func part2(input string) interface{} {
 	}
 
 	return p
-}
-
-func ReadFileAsString(filePath string) string {
-	path, err := os.Getwd()
-	if err != nil {
-		panic(err)
-	}
-
-	dat, err := os.ReadFile(path + filePath)
-	if err != nil {
-		panic(err)
-	}
-
-	return string(dat)
 }
