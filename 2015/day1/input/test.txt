@@ -1,1 +1,1 @@
-foo input
+foo inputs
