@@ -8,7 +8,7 @@ import (
 
 func main() {
 	input := in.ReadFileAsString("/year_/day_/part1.test")
-	fmt.Printf("P2: %s", part1(input))
+	fmt.Printf("P1: %s\n", part1(input))
 }
 
 func part1(input string) string {
