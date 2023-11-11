@@ -3,6 +3,7 @@ package in
 import (
 	"bufio"
 	"os"
+	"strings"
 )
 
 func ReadFileAsString(filePath string) string {
@@ -16,7 +17,7 @@ func ReadFileAsString(filePath string) string {
 		panic(err)
 	}
 
-	return string(dat)
+	return strings.TrimSuffix(string(dat), "\n")
 }
 
 func ReadFileAsStringSlice(filePath string) []string {
