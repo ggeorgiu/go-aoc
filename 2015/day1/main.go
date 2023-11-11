@@ -28,7 +28,6 @@ func part1(input string) int {
 
 func part2(input string) interface{} {
 	var c int
-	var p int
 	for i, r := range input {
 		switch r {
 		case '(':
@@ -38,10 +37,9 @@ func part2(input string) interface{} {
 		}
 
 		if c == -1 {
-			p = i + 1
-			break
+			return i + 1
 		}
 	}
 
-	return p
+	return 0
 }
