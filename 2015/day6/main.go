@@ -26,13 +26,14 @@ func part1(input []string) int {
 	m := map[point]int{}
 
 	for _, s := range input {
-		if strings.HasPrefix(s, "turn on") {
+		switch {
+		case strings.HasPrefix(s, "turn on"):
 			p1, p2 := getCoords(s, "turn on ")
 			turnOn(m, p1, p2)
-		} else if strings.HasPrefix(s, "turn off") {
+		case strings.HasPrefix(s, "turn off"):
 			p1, p2 := getCoords(s, "turn off ")
 			turnOff(m, p1, p2)
-		} else if strings.HasPrefix(s, "toggle") {
+		case strings.HasPrefix(s, "toggle"):
 			p1, p2 := getCoords(s, "toggle ")
 			toggle(m, p1, p2)
 		}
@@ -69,13 +70,14 @@ func part2(input []string) int {
 	m := map[point]int{}
 
 	for _, s := range input {
-		if strings.HasPrefix(s, "turn on") {
+		switch {
+		case strings.HasPrefix(s, "turn on"):
 			p1, p2 := getCoords(s, "turn on ")
 			turnOnP2(m, p1, p2)
-		} else if strings.HasPrefix(s, "turn off") {
+		case strings.HasPrefix(s, "turn off"):
 			p1, p2 := getCoords(s, "turn off ")
 			turnOffP2(m, p1, p2)
-		} else if strings.HasPrefix(s, "toggle") {
+		case strings.HasPrefix(s, "toggle"):
 			p1, p2 := getCoords(s, "toggle ")
 			toggleP2(m, p1, p2)
 		}
