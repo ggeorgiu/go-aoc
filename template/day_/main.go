@@ -11,10 +11,10 @@ func main() {
 	fmt.Printf("P1: %v\n", part1(input))
 }
 
-func part1(input string) string {
+func part1(input string) interface{} {
 	return ""
 }
 
-func part2(input string) string {
+func part2(input string) interface{} {
 	return ""
 }
