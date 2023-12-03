@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"go-aoc/pkg/in"
 	"strconv"
+
+	"go-aoc/pkg/in"
 )
 
 func main() {
