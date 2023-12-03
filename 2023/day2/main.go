@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"go-aoc/pkg/conv"
 	"strings"
+
+	"go-aoc/pkg/conv"
 
 	"go-aoc/pkg/in"
 )
@@ -24,7 +25,7 @@ func part1(input []string) int {
 	sum := 0
 	for _, line := range input {
 		parts := strings.Split(line, ": ")
-		gameID := conv.ToInt(parts[0][5:]) //getting game ID from "Game x"
+		gameID := conv.ToInt(parts[0][5:]) // getting game ID from "Game x"
 		games := strings.Split(parts[1], "; ")
 
 		possible := true

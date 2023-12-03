@@ -13,7 +13,7 @@ func main() {
 	fmt.Printf("P1: %v\n", part2(input))
 }
 
-func part1(input []string) int {
+func part1(input []string) interface{} {
 	total := 0
 	for _, v := range input {
 		t := unquote(v)

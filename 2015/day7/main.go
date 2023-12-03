@@ -80,8 +80,8 @@ func processInstruction(v string, config map[string]int) (int, bool) {
 }
 
 func buildConfig(input []string) (map[string]string, map[string]int) {
-	var circuit = map[string]string{}
-	var values = map[string]int{}
+	circuit := map[string]string{}
+	values := map[string]int{}
 
 	for _, v := range input {
 		split := strings.Split(v, " -> ")
@@ -115,7 +115,7 @@ func toNumber(s string) int {
 }
 
 func doOperation(op operation) int {
-	var v = 0
+	v := 0
 	switch op.gate {
 	case "AND":
 		v = op.op1 & op.op2

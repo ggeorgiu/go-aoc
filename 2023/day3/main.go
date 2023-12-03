@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	"go-aoc/pkg/conv"
 	"go-aoc/pkg/in"
 )
@@ -105,6 +106,7 @@ func getNeighborNums(input [][]rune, x, y int) []int {
 func isSign(r rune) bool {
 	return !isDigit(r) && r != '.'
 }
+
 func isDigit(r rune) bool {
 	return r >= '0' && r <= '9'
 }

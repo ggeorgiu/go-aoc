@@ -38,7 +38,7 @@ func part1(input []string) int {
 }
 
 func part2(input []string) int {
-	var digits = []string{
+	digits := []string{
 		"1", "2", "3", "4", "5", "6", "7", "8", "9",
 		"one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
 	}
