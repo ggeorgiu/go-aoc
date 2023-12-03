@@ -2,17 +2,15 @@ package in
 
 import (
 	"bufio"
+	"io"
 	"os"
 	"strings"
 )
 
 func ReadFileAsString(filePath string) string {
-	path, err := os.Getwd()
-	if err != nil {
-		panic(err)
-	}
+	file := openFile(filePath)
 
-	dat, err := os.ReadFile(path + filePath)
+	dat, err := io.ReadAll(file)
 	if err != nil {
 		panic(err)
 	}
@@ -21,15 +19,7 @@ func ReadFileAsString(filePath string) string {
 }
 
 func ReadFileAsStringSlice(filePath string) []string {
-	path, err := os.Getwd()
-	if err != nil {
-		panic(err)
-	}
-
-	file, err := os.Open(path + filePath)
-	if err != nil {
-		panic(err)
-	}
+	file := openFile(filePath)
 
 	var lines []string
 	scanner := bufio.NewScanner(file)
@@ -41,15 +31,7 @@ func ReadFileAsStringSlice(filePath string) []string {
 }
 
 func ReadFileAsRuneMatrix(filePath string) [][]rune {
-	path, err := os.Getwd()
-	if err != nil {
-		panic(err)
-	}
-
-	file, err := os.Open(path + filePath)
-	if err != nil {
-		panic(err)
-	}
+	file := openFile(filePath)
 
 	var m [][]rune
 	scanner := bufio.NewScanner(file)
@@ -63,4 +45,17 @@ func ReadFileAsRuneMatrix(filePath string) [][]rune {
 	}
 
 	return m
+}
+
+func openFile(filePath string) *os.File {
+	path, err := os.Getwd()
+	if err != nil {
+		panic(err)
+	}
+
+	file, err := os.Open(path + filePath)
+	if err != nil {
+		panic(err)
+	}
+	return file
 }

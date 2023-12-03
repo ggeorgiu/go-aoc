@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"strconv"
+	"go-aoc/pkg/conv"
 	"strings"
 
 	"go-aoc/pkg/in"
@@ -24,7 +24,7 @@ func part1(input []string) int {
 	sum := 0
 	for _, line := range input {
 		parts := strings.Split(line, ": ")
-		gameID, _ := strconv.Atoi(parts[0][5:]) //getting game ID from "Game x"
+		gameID := conv.ToInt(parts[0][5:]) //getting game ID from "Game x"
 		games := strings.Split(parts[1], "; ")
 
 		possible := true
@@ -36,7 +36,7 @@ func part1(input []string) int {
 			draws := strings.Split(g, ", ")
 			for _, d := range draws {
 				vals := strings.Split(d, " ")
-				c, _ := strconv.Atoi(vals[0])
+				c := conv.ToInt(vals[0])
 				color := vals[1]
 
 				if c > config[color] {
@@ -69,7 +69,7 @@ func part2(input []string) int {
 			draws := strings.Split(g, ", ")
 			for _, d := range draws {
 				vals := strings.Split(d, " ")
-				c, _ := strconv.Atoi(vals[0])
+				c := conv.ToInt(vals[0])
 				color := vals[1]
 
 				if m[color] < c {

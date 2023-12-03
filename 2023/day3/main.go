@@ -2,8 +2,7 @@ package main
 
 import (
 	"fmt"
-	"strconv"
-
+	"go-aoc/pkg/conv"
 	"go-aoc/pkg/in"
 )
 
@@ -95,7 +94,7 @@ func getNeighborNums(input [][]rune, x, y int) []int {
 				visited[cord{ni, end}] = true
 			}
 
-			n, _ := strconv.Atoi(string(input[ni][start : end+1]))
+			n := conv.ToInt(string(input[ni][start : end+1]))
 			nrs = append(nrs, n)
 		}
 	}
