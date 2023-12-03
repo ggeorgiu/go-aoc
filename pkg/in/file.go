@@ -39,3 +39,28 @@ func ReadFileAsStringSlice(filePath string) []string {
 
 	return lines
 }
+
+func ReadFileAsRuneMatrix(filePath string) [][]rune {
+	path, err := os.Getwd()
+	if err != nil {
+		panic(err)
+	}
+
+	file, err := os.Open(path + filePath)
+	if err != nil {
+		panic(err)
+	}
+
+	var m [][]rune
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		line := scanner.Text()
+		row := make([]rune, len(line))
+		for i, r := range line {
+			row[i] = r
+		}
+		m = append(m, row)
+	}
+
+	return m
+}
