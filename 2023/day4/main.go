@@ -19,9 +19,10 @@ func part1(input []string) interface{} {
 	var sum int
 	arr := make([]int, len(input))
 
+	p := strings.Index(input[0], ":") + 2
 	for i, v := range input {
 		count := 0
-		v = v[10:]
+		v = v[p:]
 		parts := strings.Split(v, " | ")
 
 		winning := strings.Split(parts[0], " ")
@@ -57,8 +58,9 @@ func part2(input []string) interface{} {
 	}
 
 	sum := 0
+	p := strings.Index(input[0], ":") + 2
 	for i, v := range input {
-		v = v[10:]
+		v = v[p:]
 		parts := strings.Split(v, " | ")
 
 		winning := strings.Split(parts[0], " ")
