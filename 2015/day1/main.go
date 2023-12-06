@@ -8,8 +8,8 @@ import (
 
 func main() {
 	input := in.ReadFileAsString("/2015/day1/part1.input")
-	fmt.Println(part1(input))
-	fmt.Println(part2(input))
+	fmt.Printf("P1: %v\n", part1(input))
+	fmt.Printf("P2: %v\n", part2(input))
 }
 
 func part1(input string) int {

@@ -10,7 +10,7 @@ import (
 func main() {
 	input := in.ReadFileAsRuneMatrix("/2023/day3/part1.test")
 	fmt.Printf("P1: %v\n", part1(input))
-	fmt.Printf("P1: %v\n", part2(input))
+	fmt.Printf("P2: %v\n", part2(input))
 }
 
 func part1(input [][]rune) interface{} {
