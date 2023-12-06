@@ -20,17 +20,10 @@ func part1(input []string) interface{} {
 	arr := make([]int, len(input))
 
 	p := strings.Index(input[0], ":") + 2
-	for i, v := range input {
+	for i, line := range input {
+		w, g := parseCards(line, p)
+
 		count := 0
-		v = v[p:]
-		parts := strings.Split(v, " | ")
-
-		winning := strings.Split(parts[0], " ")
-		w := conv.ToIntSlice(winning)
-
-		got := strings.Split(parts[1], " ")
-		g := conv.ToIntSlice(got)
-
 		for iw := 0; iw < len(w); iw++ {
 			for jg := 0; jg < len(g); jg++ {
 				if g[jg] == w[iw] {
@@ -52,22 +45,15 @@ func part1(input []string) interface{} {
 }
 
 func part2(input []string) interface{} {
-	arr := make([]int, len(input))
-	for i := 0; i < len(arr); i++ {
-		arr[i] = 1
+	cardCount := make([]int, len(input))
+	for i := 0; i < len(cardCount); i++ {
+		cardCount[i] = 1
 	}
 
 	sum := 0
 	p := strings.Index(input[0], ":") + 2
-	for i, v := range input {
-		v = v[p:]
-		parts := strings.Split(v, " | ")
-
-		winning := strings.Split(parts[0], " ")
-		w := conv.ToIntSlice(winning)
-
-		got := strings.Split(parts[1], " ")
-		g := conv.ToIntSlice(got)
+	for i, line := range input {
+		w, g := parseCards(line, p)
 
 		count := 0
 		for iw := 0; iw < len(w); iw++ {
@@ -78,16 +64,29 @@ func part2(input []string) interface{} {
 			}
 		}
 
-		k := 1
-		for k <= count {
-			arr[i+k] += arr[i]
-			k++
+		cIdx := 1
+		for cIdx <= count {
+			cardCount[i+cIdx] += cardCount[i]
+			cIdx++
 		}
 	}
 
-	for _, v := range arr {
+	for _, v := range cardCount {
 		sum += v
 	}
 
 	return sum
+}
+
+func parseCards(line string, p int) ([]int, []int) {
+	line = line[p:] // cut the "card x:" prefix
+	parts := strings.Split(line, " | ")
+
+	winning := strings.Split(parts[0], " ")
+	w := conv.ToIntSlice(winning)
+
+	got := strings.Split(parts[1], " ")
+	g := conv.ToIntSlice(got)
+
+	return w, g
 }
