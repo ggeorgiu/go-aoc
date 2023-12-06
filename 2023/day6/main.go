@@ -19,8 +19,8 @@ func part1(input []string) interface{} {
 	conf := make(map[string][]int)
 	order := []string{"time", "distance"}
 
-	for i, v := range input {
-		parts := strings.Split(v, ":")
+	for i, line := range input {
+		parts := strings.Split(line, ":")
 		for _, v := range strings.Split(parts[1], " ") {
 			if v == "" {
 				continue
@@ -31,11 +31,11 @@ func part1(input []string) interface{} {
 	}
 
 	sum := 1
-	for k, v := range conf["time"] {
+	for k, time := range conf["time"] {
 		dist := 0
 		count := 0
-		for i := 0; i <= v; i++ {
-			dist = i * (v - i)
+		for i := 0; i <= time; i++ {
+			dist = i * (time - i)
 			if dist > conf["distance"][k] {
 				count++
 			}
@@ -50,16 +50,16 @@ func part2(input []string) interface{} {
 	conf := make(map[string]int)
 	order := []string{"time", "distance"}
 
-	for i, v := range input {
-		parts := strings.Split(v, ":")
+	for i, line := range input {
+		parts := strings.Split(line, ":")
 		conf[order[i]] = conv.ToInt(strings.ReplaceAll(parts[1], " ", ""))
 	}
 
 	dist := 0
 	count := 0
-	v := conf["time"]
-	for i := 0; i <= v; i++ {
-		dist = i * (v - i)
+	time := conf["time"]
+	for i := 0; i <= time; i++ {
+		dist = i * (time - i)
 		if dist > conf["distance"] {
 			count++
 		}
