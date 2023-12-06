@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"go-aoc/pkg/gen"
 	"math"
 	"sort"
 	"strconv"
 	"strings"
+
+	"go-aoc/pkg/gen"
 
 	"go-aoc/pkg/datas"
 
