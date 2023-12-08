@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 DAY=$1
-YEAR=2015
+YEAR=2023
 
 if [ -n "$2" ]; then
   YEAR=$2
