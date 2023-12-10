@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"go-aoc/pkg/algs"
 	"strings"
 
+	"go-aoc/pkg/algs"
 	"go-aoc/pkg/in"
 )
 
