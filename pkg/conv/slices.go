@@ -3,10 +3,11 @@ package conv
 func ToIntSlice(ss []string) []int {
 	var is []int
 	for _, c := range ss {
-		n := ToInt(c)
-		if n == 0 {
+		if c == "" {
 			continue
 		}
+
+		n := ToInt(c)
 		is = append(is, n)
 	}
 
