@@ -11,7 +11,7 @@ import (
 
 func main() {
 	input := in.ReadFileAsStringSlice("/2023/day9/part1.input")
-	//fmt.Printf("P1: %v\n", part1(input))
+	fmt.Printf("P1: %v\n", part1(input))
 	fmt.Printf("P2: %v\n", part2(input))
 }
 
