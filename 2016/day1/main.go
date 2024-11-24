@@ -17,7 +17,7 @@ func main() {
 var vals = []int{1, 1, -1, -1}
 
 func part1(input []string) interface{} {
-	var pos = []int{0, 0}
+	pos := []int{0, 0}
 
 	orientation := 0
 	for _, v := range input {
@@ -46,7 +46,7 @@ type point struct {
 
 func part2(input []string) interface{} {
 	orientation := 0
-	var pos = []int{0, 0}
+	pos := []int{0, 0}
 
 	mem := map[point]bool{
 		{0, 0}: true,
