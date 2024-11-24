@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
+	"strings"
+
 	"go-aoc/pkg/algs"
 	"go-aoc/pkg/conv"
-	"strings"
 
 	"go-aoc/pkg/in"
 )
@@ -27,13 +28,8 @@ func part1(input []string) interface{} {
 
 func predict(data []int) int {
 	var lastNums []int
-	var conf = data
-	for {
-		if allZeroes(conf) {
-			break
-		}
-		fmt.Println(conf)
-
+	conf := data
+	for allZeroes(conf) {
 		conf2 := make([]int, len(conf)-1)
 		for i := 0; i < len(conf)-1; i++ {
 			conf2[i] = conf[i+1] - conf[i]
@@ -59,12 +55,8 @@ func part2(input []string) interface{} {
 
 func predict2(data []int) int {
 	var firstNums []int
-	var conf = data
-	for {
-		if allZeroes(conf) {
-			break
-		}
-
+	conf := data
+	for allZeroes(conf) {
 		conf2 := make([]int, len(conf)-1)
 		for i := 0; i < len(conf)-1; i++ {
 			conf2[i] = conf[i+1] - conf[i]
