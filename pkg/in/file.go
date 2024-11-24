@@ -30,6 +30,18 @@ func ReadFileAsStringSlice(filePath string) []string {
 	return lines
 }
 
+func ReadFileAsCSVLine(filePath string) []string {
+	file := openFile(filePath)
+
+	scanner := bufio.NewScanner(file)
+	var line string
+	if scanner.Scan() {
+		line = scanner.Text()
+	}
+
+	return strings.Split(line, ", ")
+}
+
 func ReadFileAsRuneMatrix(filePath string) [][]rune {
 	file := openFile(filePath)
 
