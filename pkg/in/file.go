@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"io"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -53,6 +54,26 @@ func ReadFileAsRuneMatrix(filePath string) [][]rune {
 		for i, r := range line {
 			row[i] = r
 		}
+		m = append(m, row)
+	}
+
+	return m
+}
+
+func ReadFileAsIntMatrix(filePath string) [][]int {
+	file := openFile(filePath)
+
+	var m [][]int
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		line := scanner.Text()
+		elems := strings.Fields(line)
+		row := make([]int, len(elems))
+		for i, v := range elems {
+			val, _ := strconv.Atoi(v)
+			row[i] = val
+		}
+
 		m = append(m, row)
 	}
 
