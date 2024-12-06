@@ -36,7 +36,7 @@ func part1(input []string) interface{} {
 
 func part2(input []string) interface{} {
 	var possible int
-	var triangles = make([][]int, 3)
+	triangles := make([][]int, 3)
 	for i := 0; i < 3; i++ {
 		triangles[i] = make([]int, 3)
 	}

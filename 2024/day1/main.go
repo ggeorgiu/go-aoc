@@ -46,7 +46,7 @@ func part1(input []string) interface{} {
 }
 
 func part2(input []string) interface{} {
-	var stat = make(map[int]int, 100_000)
+	stat := make(map[int]int, 100_000)
 	var arr1 []int
 
 	for _, line := range input {

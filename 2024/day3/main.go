@@ -2,14 +2,17 @@ package main
 
 import (
 	"fmt"
-	"go-aoc/pkg/in"
 	"regexp"
 	"strconv"
 	"strings"
+
+	"go-aoc/pkg/in"
 )
 
-var pattern = "mul\\([0-9]*,[0-9]*\\)"
-var pattern2 = "do\\(\\)|don\\'t\\(\\)|mul\\([0-9]*,[0-9]*\\)"
+var (
+	pattern  = "mul\\([0-9]*,[0-9]*\\)"
+	pattern2 = "do\\(\\)|don\\'t\\(\\)|mul\\([0-9]*,[0-9]*\\)"
+)
 
 func main() {
 	input := in.ReadFileAsStringSlice("/2024/day3/part1.input")
