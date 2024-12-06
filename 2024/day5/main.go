@@ -100,11 +100,7 @@ func part2(input []string) interface{} {
 		}
 
 		parts := strings.Split(input[i], "|")
-		if v, ok := config[parts[0]]; ok {
-			config[parts[0]] = append(v, parts[1])
-		} else {
-			config[parts[0]] = []string{parts[1]}
-		}
+		config[parts[0]] = append(config[parts[0]], parts[1])
 
 		i++
 	}
