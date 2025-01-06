@@ -8,6 +8,7 @@ import (
 func main() {
 	input := in.ReadFileAsRuneMatrix("/2024/day8/part1.input")
 	fmt.Printf("P1: %v\n", part1(input))
+
 	input = in.ReadFileAsRuneMatrix("/2024/day8/part1.input")
 	fmt.Printf("P2: %v\n", part2(input))
 }
