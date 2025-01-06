@@ -18,7 +18,7 @@ type point struct {
 	y int
 }
 
-func part1(input [][]rune) interface{} {
+func part1(input [][]rune) any {
 	count := make(map[point]bool)
 
 	for i := 0; i < len(input); i++ {
@@ -54,7 +54,7 @@ func part1(input [][]rune) interface{} {
 	return len(count)
 }
 
-func part2(input [][]rune) interface{} {
+func part2(input [][]rune) any {
 	count := make(map[point]bool)
 
 	for i := 0; i < len(input); i++ {

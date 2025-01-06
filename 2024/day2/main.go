@@ -12,7 +12,7 @@ func main() {
 	fmt.Printf("P2: %v\n", part2(input))
 }
 
-func part1(input [][]int) interface{} {
+func part1(input [][]int) any {
 	var count int
 
 	for i := 0; i < len(input); i++ {
@@ -43,7 +43,7 @@ func part1(input [][]int) interface{} {
 	return count
 }
 
-func part2(input [][]int) interface{} {
+func part2(input [][]int) any {
 	var count int
 
 	for i := 0; i < len(input); i++ {

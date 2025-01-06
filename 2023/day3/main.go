@@ -13,7 +13,7 @@ func main() {
 	fmt.Printf("P2: %v\n", part2(input))
 }
 
-func part1(input [][]rune) interface{} {
+func part1(input [][]rune) any {
 	sum := 0
 	for i := 0; i < len(input); i++ {
 		for j := 0; j < len(input[0]); j++ {
@@ -35,7 +35,7 @@ func part1(input [][]rune) interface{} {
 	return sum
 }
 
-func part2(input [][]rune) interface{} {
+func part2(input [][]rune) any {
 	var sum int
 	for i := 0; i < len(input); i++ {
 		for j := 0; j < len(input[0]); j++ {

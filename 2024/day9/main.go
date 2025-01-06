@@ -13,7 +13,7 @@ func main() {
 	fmt.Printf("P2: %v\n", part2(input))
 }
 
-func part1(input string) interface{} {
+func part1(input string) any {
 	var isFile = true
 	var data []int
 	var id int
@@ -60,7 +60,7 @@ func part1(input string) interface{} {
 	return checksum
 }
 
-func part2(input string) interface{} {
+func part2(input string) any {
 	var isFile = true
 	var data []int
 	var id int

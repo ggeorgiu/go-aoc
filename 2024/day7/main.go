@@ -17,7 +17,7 @@ func main() {
 	fmt.Printf("P2: %v\n", part2(input))
 }
 
-func part1(input []string) interface{} {
+func part1(input []string) any {
 	config := make(map[int][]string)
 	var total int64
 
@@ -59,7 +59,7 @@ func part1(input []string) interface{} {
 	return total
 }
 
-func part2(input []string) interface{} {
+func part2(input []string) any {
 	config := make(map[int][]string)
 	var total int64
 

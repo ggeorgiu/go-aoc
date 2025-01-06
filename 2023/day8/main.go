@@ -19,7 +19,7 @@ type node struct {
 	right string
 }
 
-func part1(input []string) interface{} {
+func part1(input []string) any {
 	directions := input[0]
 
 	config := make(map[string]node)
@@ -58,7 +58,7 @@ func part1(input []string) interface{} {
 	return step
 }
 
-func part2(input []string) interface{} {
+func part2(input []string) any {
 	directions := input[0]
 	config := make(map[string]node)
 	var current []string

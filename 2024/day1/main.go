@@ -15,7 +15,7 @@ func main() {
 	fmt.Printf("P2: %v\n", part2(input))
 }
 
-func part1(input []string) interface{} {
+func part1(input []string) any {
 	var arr1 []int
 	var arr2 []int
 
@@ -45,7 +45,7 @@ func part1(input []string) interface{} {
 	return diff
 }
 
-func part2(input []string) interface{} {
+func part2(input []string) any {
 	stat := make(map[int]int, 100_000)
 	var arr1 []int
 

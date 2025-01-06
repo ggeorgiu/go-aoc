@@ -15,7 +15,7 @@ func main() {
 	fmt.Printf("P2: %v\n", part2(input))
 }
 
-func part1(input []string) interface{} {
+func part1(input []string) any {
 	var sum int
 	arr := make([]int, len(input))
 
@@ -44,7 +44,7 @@ func part1(input []string) interface{} {
 	return sum
 }
 
-func part2(input []string) interface{} {
+func part2(input []string) any {
 	cardCount := make([]int, len(input))
 	for i := 0; i < len(cardCount); i++ {
 		cardCount[i] = 1

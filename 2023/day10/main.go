@@ -20,7 +20,7 @@ func main() {
 	fmt.Printf("P1: %v\n", part1(input))
 }
 
-func part1(input [][]rune) interface{} {
+func part1(input [][]rune) any {
 	var si, sj int
 	for i := 0; i < len(input); i++ {
 		for j := 0; j < len(input[0]); j++ {
@@ -81,6 +81,6 @@ func inBounds(ci int, cj int, n int) bool {
 	return ci > -1 && cj > -1 && ci < n && cj < n
 }
 
-func part2(input []string) interface{} {
+func part2(input []string) any {
 	return ""
 }

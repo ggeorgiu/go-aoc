@@ -15,7 +15,7 @@ func main() {
 	fmt.Printf("P2: %v\n", part2(input))
 }
 
-func part1(input []string) interface{} {
+func part1(input []string) any {
 	conf := make(map[string][]int)
 	order := []string{"time", "distance"}
 
@@ -46,7 +46,7 @@ func part1(input []string) interface{} {
 	return sum
 }
 
-func part2(input []string) interface{} {
+func part2(input []string) any {
 	conf := make(map[string]int)
 	order := []string{"time", "distance"}
 

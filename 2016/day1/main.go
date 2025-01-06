@@ -16,7 +16,7 @@ func main() {
 
 var vals = []int{1, 1, -1, -1}
 
-func part1(input []string) interface{} {
+func part1(input []string) any {
 	pos := []int{0, 0}
 
 	orientation := 0
@@ -44,7 +44,7 @@ type point struct {
 	b int
 }
 
-func part2(input []string) interface{} {
+func part2(input []string) any {
 	orientation := 0
 	pos := []int{0, 0}
 

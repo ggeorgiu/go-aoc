@@ -20,7 +20,7 @@ type conf struct {
 	lessThan []string
 }
 
-func part1(input []string) interface{} {
+func part1(input []string) any {
 	var i int
 	config := make(map[string]conf)
 
@@ -90,7 +90,7 @@ func (a ByConfig) Less(i, j int) bool {
 }
 func (a ByConfig) Swap(i, j int) { a[i], a[j] = a[j], a[i] }
 
-func part2(input []string) interface{} {
+func part2(input []string) any {
 	config = make(map[string][]string)
 	var i int
 	for {

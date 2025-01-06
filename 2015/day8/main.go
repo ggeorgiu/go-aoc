@@ -13,7 +13,7 @@ func main() {
 	fmt.Printf("P2: %v\n", part2(input))
 }
 
-func part1(input []string) interface{} {
+func part1(input []string) any {
 	total := 0
 	for _, v := range input {
 		t := unquote(v)
@@ -29,7 +29,7 @@ func unquote(str string) string {
 	return s
 }
 
-func part2(input []string) interface{} {
+func part2(input []string) any {
 	total := 0
 	for _, v := range input {
 		t := quote(v)

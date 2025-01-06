@@ -13,7 +13,7 @@ func main() {
 	fmt.Printf("P2: %v\n", part2(input))
 }
 
-func part1(input [][]rune) interface{} {
+func part1(input [][]rune) any {
 	var count int
 
 	count += countByLine(input)
@@ -116,7 +116,7 @@ func countByLine(input [][]rune) int {
 	return total
 }
 
-func part2(input [][]rune) interface{} {
+func part2(input [][]rune) any {
 	var total int
 	for i := 1; i < len(input)-1; i++ {
 		for j := 1; j < len(input)-1; j++ {

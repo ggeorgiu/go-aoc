@@ -52,7 +52,7 @@ func (h hands) Swap(i, j int) {
 	h[i], h[j] = h[j], h[i]
 }
 
-func part1(input []string) interface{} {
+func part1(input []string) any {
 	conf = make(map[uint8]int)
 	for i, v := range "23456789TJQK" {
 		conf[uint8(v)] = i
@@ -82,7 +82,7 @@ func part1(input []string) interface{} {
 	return sum
 }
 
-func part2(input []string) interface{} {
+func part2(input []string) any {
 	conf = make(map[uint8]int)
 	for i, v := range "J23456789TQK" {
 		conf[uint8(v)] = i

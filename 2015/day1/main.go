@@ -26,7 +26,7 @@ func part1(input string) int {
 	return total
 }
 
-func part2(input string) interface{} {
+func part2(input string) any {
 	var c int
 	for i, r := range input {
 		switch r {

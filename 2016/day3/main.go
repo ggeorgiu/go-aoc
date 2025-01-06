@@ -14,7 +14,7 @@ func main() {
 	fmt.Printf("P2: %v\n", part2(input))
 }
 
-func part1(input []string) interface{} {
+func part1(input []string) any {
 	var possible int
 
 	for _, line := range input {
@@ -34,7 +34,7 @@ func part1(input []string) interface{} {
 	return possible
 }
 
-func part2(input []string) interface{} {
+func part2(input []string) any {
 	var possible int
 	triangles := make([][]int, 3)
 	for i := 0; i < 3; i++ {

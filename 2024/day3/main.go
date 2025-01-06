@@ -20,7 +20,7 @@ func main() {
 	fmt.Printf("P2: %v\n", part2(input))
 }
 
-func part1(input []string) interface{} {
+func part1(input []string) any {
 	var sum int
 	for _, line := range input {
 		r := regexp.MustCompile(pattern)
@@ -34,7 +34,7 @@ func part1(input []string) interface{} {
 	return sum
 }
 
-func part2(input []string) interface{} {
+func part2(input []string) any {
 	var sum int
 	enabled := true
 	for _, line := range input {

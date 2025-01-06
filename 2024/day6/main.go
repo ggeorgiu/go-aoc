@@ -19,7 +19,7 @@ var (
 	dirY = []int{0, 1, 0, -1}
 )
 
-func part1(input [][]rune) interface{} {
+func part1(input [][]rune) any {
 	var posX, posY int
 
 	for i := 0; i < len(input); i++ {
@@ -63,7 +63,7 @@ type point struct {
 	dir int
 }
 
-func part2(input [][]rune) interface{} {
+func part2(input [][]rune) any {
 	var possX, possY int
 
 	for i := 0; i < len(input); i++ {

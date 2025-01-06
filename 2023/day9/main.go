@@ -16,7 +16,7 @@ func main() {
 	fmt.Printf("P2: %v\n", part2(input))
 }
 
-func part1(input []string) interface{} {
+func part1(input []string) any {
 	var sum int
 	for _, line := range input {
 		is := conv.ToIntSlice(strings.Split(line, " "))
@@ -42,7 +42,7 @@ func predict(data []int) int {
 	return data[len(data)-1] + algs.Sum(lastNums)
 }
 
-func part2(input []string) interface{} {
+func part2(input []string) any {
 	var sum int
 	for _, line := range input {
 		is := conv.ToIntSlice(strings.Split(line, " "))

@@ -19,7 +19,7 @@ var dial = [][]string{
 	{"7", "8", "9"},
 }
 
-func part1(input []string) interface{} {
+func part1(input []string) any {
 	posL := 1
 	posC := 1
 
@@ -64,7 +64,7 @@ var dial2 = [][]string{
 	{"_", "_", "_", "_", "_", "_", "_"},
 }
 
-func part2(input []string) interface{} {
+func part2(input []string) any {
 	posL := 3
 	posC := 3
 

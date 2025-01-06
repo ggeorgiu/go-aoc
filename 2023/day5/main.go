@@ -23,7 +23,7 @@ func main() {
 	fmt.Printf("P2: %v\n", part2(input))
 }
 
-func part1(input []string) interface{} {
+func part1(input []string) any {
 	seeds, conf := parseSeedsAndConfig(input)
 
 	workingMap := make(map[int]int)
@@ -52,7 +52,7 @@ func part1(input []string) interface{} {
 	return mx
 }
 
-func part2(input []string) interface{} {
+func part2(input []string) any {
 	seeds, conf := parseSeedsAndConfig(input)
 
 	mx := math.MaxInt
