@@ -45,12 +45,12 @@ func part2(input []string) any {
 			digits = append(digits, c-'0')
 		}
 
+		startPos := 0
 		limit := 12
-		maxPos := 0
 		for limit > 0 {
-			dig, pos := maxIntervalDigit(digits, maxPos, len(digits)-limit)
+			dig, maxPos := maxIntervalDigit(digits, startPos, len(digits)-limit)
 			nr = (nr * 10) + int(dig)
-			maxPos = pos + 1
+			startPos = maxPos + 1
 			limit--
 		}
 		total += nr
