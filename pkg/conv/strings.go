@@ -7,3 +7,9 @@ func ToInt(val string) int {
 
 	return v
 }
+
+func ToInt64(val string) int64 {
+	v, _ := strconv.ParseInt(val, 10, 64)
+
+	return v
+}
