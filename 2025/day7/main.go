@@ -109,39 +109,17 @@ func ascend(matrix [][]rune, i, j int, targeti, targetj int, cache [][]int) int 
 		return cache[i][j]
 	}
 
-	if j > 0 && j < len(matrix[i])-1 {
-		if matrix[i][j-1] == '^' && matrix[i][j+1] == '^' {
-			v1 := ascend(matrix, i-1, j-1, targeti, targetj, cache)
-			v2 := ascend(matrix, i-1, j+1, targeti, targetj, cache)
-			v3 := ascend(matrix, i-1, j, targeti, targetj, cache)
-
-			cache[i][j] = v1 + v2 + v3
-			return v1 + v2 + v3
-		}
+	var total int
+	if j > 0 && matrix[i][j-1] == '^' {
+		total += ascend(matrix, i-1, j-1, targeti, targetj, cache)
 	}
 
-	if j > 0 {
-		if matrix[i][j-1] == '^' {
-			v1 := ascend(matrix, i-1, j-1, targeti, targetj, cache)
-			v2 := ascend(matrix, i-1, j, targeti, targetj, cache)
-			cache[i][j] = v1 + v2
-			return v1 + v2
-		}
+	if j < len(matrix[i])-1 && matrix[i][j+1] == '^' {
+		total += ascend(matrix, i-1, j+1, targeti, targetj, cache)
 	}
 
-	if j < len(matrix[i])-1 {
-		if matrix[i][j+1] == '^' {
-			v1 := ascend(matrix, i-1, j+1, targeti, targetj, cache)
-			v2 := ascend(matrix, i-1, j, targeti, targetj, cache)
+	total += ascend(matrix, i-1, j, targeti, targetj, cache)
 
-			cache[i][j] = v1 + v2
-			return v1 + v2
-
-		}
-	}
-
-	v1 := ascend(matrix, i-1, j, targeti, targetj, cache)
-	cache[i][j] = v1
-
-	return v1
+	cache[i][j] = total
+	return total
 }
